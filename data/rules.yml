@@ -1,0 +1,21 @@
+version: "3.1"
+
+rules:
+
+  - rule: activate horoscope form 
+    steps: 
+      - intent: get_horoscope
+      - action: horoscope_form
+      - active_loop: horoscope_form
+
+  - rule: submit form
+    condition:
+      - active_loop: horoscope_form
+    steps:
+      - action: horoscope_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_get_horoscope
+
+    

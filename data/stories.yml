@@ -1,0 +1,45 @@
+version: "3.1"
+
+stories:
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: chitchat
+  steps:
+  - intent: chitchat
+  - action: respond_chitchat
+
+- story: get horoscope
+  steps:
+  - or:
+    - intent: get_horoscope
+    - intent: get_horoscope
+      entities:
+        - horoscope_sign: 双鱼
+    - intent: get_horoscope
+      entities:
+        - date_time: 今天
+    - intent: get_horoscope
+      entities:
+        - horoscope_sign: 双鱼
+        - date_time: 今天
+  - action: horoscope_form
+  - active_loop: horoscope_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: deny
+
+

@@ -1,0 +1,14 @@
+.DS_Store
+*.pyc
+*.bak
+
+.python-version
+
+.env
+.env_dev
+.env_prod
+.flake8
+
+.rasa
+horoscope_data.json
+results

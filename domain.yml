@@ -1,0 +1,85 @@
+version: "3.1"
+
+intents:
+- greet
+- goodbye
+- affirm
+- stop
+- deny
+- chitchat
+- get_horoscope
+- info_date_time
+- info_horoscope_sign
+- bot_challenge
+
+entities:
+  - date_time
+  - horoscope_sign
+
+slots:
+  date_time:
+    type: text
+    influence_conversation: false
+    mappings:
+      - entity: date_time
+        type: from_entity
+        conditions:
+          - active_loop: horoscope_form
+
+  horoscope_sign:
+    type: text
+    influence_conversation: false
+    mappings:
+      - entity: horoscope_sign
+        type: from_entity
+        conditions:
+          - active_loop: horoscope_form
+
+
+responses:
+  utter_greet:
+  - text: "你好，有什么能帮到你？"
+
+  utter_goodbye:
+  - text: "再见"
+
+  utter_ask_horoscope_sign:
+  - text: "想查哪个星座的运势?"
+
+  utter_ask_date_time:
+  - text: "想查今天、明天、本周、本月还是今年的运势？"
+
+  utter_ask_continue:
+  - text: "是否要继续？"
+
+  utter_default:
+  - text: "我不明白您说的内容，请换个说法。"
+
+  utter_iamabot:
+  - text: "我是机器人, 由Rasa驱动"
+
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_horoscope_sign
+  - utter_ask_date_time
+  - utter_ask_continue
+  - utter_default
+  - respond_chitchat
+  - action_get_horoscope
+  - action_default_fallback
+
+
+forms:
+  horoscope_form:
+    ignored_intents: []
+    required_slots:
+      - date_time
+      - horoscope_sign
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+

@@ -1,0 +1,172 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - 嗨
+    - 你好
+    - 哈喽
+    - 早上好
+    - 中午好
+    - 晚上好
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - 拜拜
+    - 拜
+    - 一会见
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - 是的
+    - 确实
+    - 当然
+    - 听起来不错
+    - 对滴
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - 不
+    - 没有
+    - 绝不
+    - 我不这么认为
+    - 不可能
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - 完美
+    - 很好
+    - 好意外啊
+    - 真棒
+    - 我觉得挺好的
+    - 极好
+    - 非常完美
+    - 非常好
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - 完美
+    - 很好
+    - 好意外啊
+    - 真棒
+    - 我觉得挺好的
+    - 极好
+    - 非常完美
+    - 非常好
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - 你是机器人吗？
+    - 你是人类么？
+    - 我正在和机器人交谈？
+
+- intent: get_horoscope
+  examples: |
+    - 查一下[今天](date_time)的运势
+    - 看一下[狮子座](horoscope_sign)如何
+    - [今天](date_time)[狮子](horoscope_sign)
+    - [明天](date_time)[双鱼](horoscope_sign)的运势如何？
+    - [今年](date_time)[天秤](horoscope_sign)咋样
+    - [处女](horoscope_sign)[今年](date_time)怎样
+    - [处女](horoscope_sign)[这个月](date_time)如何
+    - [处女](horoscope_sign)[这个月](date_time)的运势
+
+- intent: info_date_time
+  examples: |
+    - [今日](date_time)
+    - [今天](date_time)
+    - [明日](date_time)
+    - [明天](date_time)
+    - [本周](date_time)
+    - [这周](date_time)
+    - [本月](date_time)
+    - [这个月](date_time)
+    - [这个月](date_time)呢
+    - [今年](date_time)
+    - [今年](date_time)的
+    - [今年](date_time)的呢
+
+- intent: info_horoscope_sign
+  examples: |
+    - [白羊](horoscope_sign)
+    - [金牛](horoscope_sign)
+    - [双子](horoscope_sign)
+    - [巨蟹](horoscope_sign)
+    - [狮子](horoscope_sign)
+    - [处女](horoscope_sign)
+    - [天秤](horoscope_sign)
+    - [天蝎](horoscope_sign)
+    - [射手](horoscope_sign)
+    - [魔羯](horoscope_sign)
+    - [水瓶](horoscope_sign)
+    - [双鱼](horoscope_sign)
+    - [双鱼](horoscope_sign)的
+    - [双鱼](horoscope_sign)的呢
